@@ -169,6 +169,7 @@
 
 
 <!-- ==============================================Section-1================================================ -->
+<!-- ==============================================Section-1================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -614,7 +615,8 @@
   "use strict";
 
   /* ---------------- DATA ----------------
-     name, price, reviews, badge, shape, length, colour, finish, image number (product-N.jpg) */
+     name, price, reviews, badge, shape, length, colour, finish, image number (not used now),
+     and optionally a 10th item: this product's own image link. */
   var RAW = [
     ["Rosé Nude",799,312,"Best Seller","Almond","Medium","Nude","Glossy",1],
     ["Cherry Wine",849,204,"","Almond","Long","Red","Glossy",2],
@@ -668,9 +670,17 @@
     ["Bridal Blush",1299,49,"New","Almond","Long","Pink","Glossy",8]
   ];
 
+  /* ---------------- IMAGES ----------------
+     Products use these images in order and then start again:
+     1st product = product-1.png, 2nd = product-2.png, 3rd = product-3.png,
+     4th = product-1.png, 5th = product-2.png, and so on.
+     To give one product its own image, add a link as the 10th item in its row in RAW. */
+  var IMAGES = ["product-1.png", "product-2.png", "product-3.png"];
+
   var PRODUCTS = RAW.map(function (p, i) {
     return { id: i + 1, name: p[0], price: p[1], reviews: p[2], badge: p[3],
-             shape: p[4], length: p[5], color: p[6], finish: p[7], img: p[8] };
+             shape: p[4], length: p[5], color: p[6], finish: p[7],
+             src: p[9] || IMAGES[i % IMAGES.length] };
   });
 
   /* ---------------- FILTER DEFINITIONS ---------------- */
@@ -889,7 +899,7 @@
   function cardHTML(p) {
     return '<li><a class="card" href="#' + slug(p.name) + '">' +
       '<div class="card__media">' +
-        '<img src="product-' + p.img + '.jpg" alt="' + p.name + ' press-on nails" loading="lazy" onerror="this.style.display=\'none\'">' +
+        (p.src ? '<img src="' + p.src + '" alt="' + p.name + ' press-on nails" loading="lazy" onerror="this.style.display=\'none\'">' : '') +
         (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
       '</div>' +
       '<h2 class="card__name">' + p.name + '</h2>' +
