@@ -1126,7 +1126,7 @@ try {
 
   /* ---------------- RENDER ---------------- */
   function cardHTML(p) {
-    return '<li><a class="card" href="#' + slug(p.name) + '">' +
+    return '<li><a class="card" href="product.html' + slug(p.name) + '">' +
       '<div class="card__media">' +
         (p.src ? '<img src="' + p.src + '" alt="' + p.name + ' press-on nails" loading="lazy" onerror="this.style.display=\'none\'">' : '') +
         (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
