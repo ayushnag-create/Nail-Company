@@ -829,7 +829,8 @@ try {
 
   <!-- ===== PRODUCTS ===== -->
   <section class="results" id="results" aria-label="Products">
-    <ul class="grid" id="grid"></ul>
+    <!-- Every product card links to this address (change it here only) -->
+    <ul class="grid" id="grid" data-product-href="product.html"></ul>
   </section>
 
   <!-- ===== PAGINATION ===== -->
@@ -951,13 +952,13 @@ try {
   var $clearAll = document.getElementById("clearAll");
   var $overlay  = document.getElementById("overlay");
   var $results  = document.getElementById("results");
+  var PRODUCT_HREF = $grid.getAttribute("data-product-href") || "product.html";
 
   var CHEVRON = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>';
   var CLOSE   = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>';
   var STARS   = new Array(6).join('<svg><use href="#star"/></svg>');
 
   function isMobile() { return window.matchMedia("(max-width: 1023px)").matches; }
-  function slug(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-"); }
   function money(n) { return "₹" + n.toLocaleString("en-IN"); }
 
   /* ---------------- BUILD FILTER BUTTONS + PANELS ---------------- */
@@ -1126,7 +1127,7 @@ try {
 
   /* ---------------- RENDER ---------------- */
   function cardHTML(p) {
-    return '<li><a class="card" href="product.html">' +
+    return '<li><a class="card" href="' + PRODUCT_HREF + '">' +
       '<div class="card__media">' +
         (p.src ? '<img src="' + p.src + '" alt="' + p.name + ' press-on nails" loading="lazy" onerror="this.style.display=\'none\'">' : '') +
         (p.badge ? '<span class="badge">' + p.badge + '</span>' : '') +
