@@ -1,0 +1,1410 @@
+<!-- ===========================================Header============================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khushé Nails – Header</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #e5608a;
+    --bg: #fffbfa;
+    --ink: #2a2626;
+    --muted: #6f6a6a;
+    --line: #e9e4e3;
+    --serif: "Cormorant Garamond", "Times New Roman", serif;
+    --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: #fff; color: var(--ink); }
+  a { color: inherit; text-decoration: none; }
+  button { background: none; border: 0; cursor: pointer; color: inherit; }
+  :focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+  /* 1. Announcement bar */
+  .announce {
+    background: var(--pink);
+    color: #fff;
+    text-align: center;
+    font-size: 11.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+  }
+
+  /* 2. Main row: menu | logo | actions */
+  .header { background: var(--bg); border-bottom: 1px solid var(--line); }
+  .header__main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .menu-btn { justify-self: start; padding: 8px; }
+
+  .logo { text-align: center; line-height: 1; }
+  .logo__name {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 34px;
+    letter-spacing: .28em;
+    margin-right: -.28em; /* offsets trailing letter-spacing so it stays centred */
+  }
+  .logo__sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 9px;
+    letter-spacing: .4em;
+    margin-right: -.4em;
+    color: var(--muted);
+  }
+
+  .actions { justify-self: end; display: flex; align-items: center; gap: 22px; }
+  .actions button, .actions a { position: relative; padding: 6px; display: grid; place-items: center; }
+  .badge {
+    position: absolute; top: -2px; right: -4px;
+    min-width: 16px; height: 16px; padding: 0 4px;
+    border-radius: 999px;
+    background: var(--pink); color: #fff;
+    font-size: 9px; font-weight: 500;
+    display: grid; place-items: center;
+  }
+
+  /* 3. Nav row */
+  .nav { border-top: 1px solid var(--line); }
+  .nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    padding: 0 16px;
+    overflow-x: auto;
+  }
+  .nav a {
+    display: block;
+    padding: 18px 0 14px;
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
+    transition: color .2s;
+  }
+  .nav a:hover { color: var(--ink); }
+  .nav a[aria-current="page"] { color: var(--ink); font-weight: 500; border-bottom-color: var(--ink); }
+
+  svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Mobile: hide the nav row, shrink the logo */
+  @media (max-width: 760px) {
+    .header__main { padding: 14px 16px; }
+    .logo__name { font-size: 26px; }
+    .actions { gap: 10px; }
+    .nav { display: none; } /* links move into the hamburger drawer */
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders above ₹999 ♡</div>
+
+<header class="header">
+  <div class="header__main">
+    <button class="menu-btn" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="logo" href="index.html" aria-label="Khushé Nails home">
+      <span class="logo__name">KHUSHÉ</span>
+      <span class="logo__sub">NAILS</span>
+    </a>
+
+    <div class="actions">
+      <button aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <a href="/wishlist" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20Z"/></svg>
+      </a>
+      <a href="/cart" aria-label="Cart, 2 items">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="badge">2</span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Main">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" aria-current="page">Shop</a></li>
+      <li><a href="collection.html">Collections</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="about.html">About</a></li>
+      <!-- <li><a href="/faq">FAQ</a></li> -->
+    </ul>
+  </nav>
+</header>
+
+</body>
+</html>
+
+
+
+
+<!-- ===============================================Section-1=========================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rosé Nude – Press-On Nails</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fffafa;
+    --ink: #2a2626;
+    --pink: #e45c87;
+    --pink-dark: #d94a78;
+    --pink-soft: #fdeff3;
+    --muted: #6f6a6a;
+    --line: #ebdfe0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  button, input { font: inherit; color: inherit; }
+  button { background: none; border: 0; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  .page {
+    /* 1360px of content on a large screen; on laptops the side margins are 5% (max 64px) */
+    width: min(1360px, 100% - 2 * clamp(20px, 5vw, 64px));
+    margin: 0 auto;
+    padding: 10px 0 88px;
+  }
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    list-style: none;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .crumbs a { text-decoration: none; transition: color .2s ease; }
+  .crumbs a:hover { color: var(--pink); }
+  .crumbs li + li::before { content: "/"; margin-right: 10px; }
+  .crumbs [aria-current] { color: var(--ink); font-weight: 500; }
+
+  /* ---------- TWO COLUMNS ---------- */
+  .product {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;        /* 648 + 64 + 648 on a large screen */
+    column-gap: 64px;
+    align-items: start;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: 80px 1fr;       /* thumbnails + main image */
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  .thumbs { display: flex; flex-direction: column; gap: 12px; }
+
+  .thumb {
+    display: block;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #f3c6cd;
+    transition: border-color .2s ease;
+  }
+  .thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .thumb:hover { border-color: var(--pink); }
+  .thumb[aria-pressed="true"] { border-color: var(--pink); }
+
+  .main-img {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f7d3da 0%, #f1b9c6 55%, #f9dde2 100%);
+  }
+  .main-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- INFO ---------- */
+  .title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(38px, 4vw, 54px);
+    line-height: 1;
+    letter-spacing: 0.005em;
+  }
+
+  .rating {
+    margin-top: 3px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .stars { display: flex; gap: 1.5px; margin-right: 8px; }
+  .stars svg { width: 13px; height: 13px; fill: var(--pink); display: block; }
+  .rating a { text-decoration: none; transition: color .2s ease; }
+  .rating a:hover { color: var(--pink); text-decoration: underline; }
+
+  .price { margin-top: 16px; font-size: 24px; line-height: 32px; font-weight: 400; }
+
+  .group { margin-top: 24px; }
+  .group__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 16px;
+  }
+  .label {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .label span { font-weight: 400; color: var(--muted); }
+
+  .size-link {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--pink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color .2s ease;
+  }
+  .size-link:hover { color: var(--pink-dark); }
+
+  .opts { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .opt { position: relative; display: block; }
+  .opt input { position: absolute; opacity: 0; width: 100%; height: 100%; inset: 0; margin: 0; cursor: pointer; }
+  .opt span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    height: 38px;
+    padding: 0 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    font-size: 14px;
+    transition: border-color .2s ease, color .2s ease, background-color .2s ease;
+  }
+  .opt:hover span { border-color: var(--pink); }
+  .opt input:checked + span { border-color: var(--pink); color: var(--pink); background: var(--pink-soft); }
+  .opt input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  /* what's included */
+  .included { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .included__list {
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    list-style: none;
+  }
+  .included__list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--muted);
+  }
+  .included__list svg {
+    flex: none;
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: var(--pink);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* quantity */
+  .qty { margin-top: 20px; display: flex; align-items: center; gap: 18px; }
+  .stepper {
+    display: flex;
+    width: 108px;
+    height: 40px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .stepper button {
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s ease, background-color .2s ease;
+  }
+  .stepper button:hover:not(:disabled) { color: var(--pink); background: var(--pink-soft); }
+  .stepper button:disabled { opacity: .35; cursor: not-allowed; }
+  .stepper svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; fill: none; }
+  .stepper input {
+    width: 36px;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    -moz-appearance: textfield;
+  }
+  .stepper input:focus-visible { outline-offset: -2px; }
+
+  /* buttons */
+  .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn--add { margin-top: 24px; height: 44px; background: var(--pink); color: #fff; }
+  .btn--add:hover { background: var(--pink-dark); }
+  .btn--add.is-added { background: var(--ink); }
+  .btn--buy { margin-top: 12px; height: 46px; border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+  .btn--buy:hover { background: var(--ink); color: #fff; }
+
+  /* ---------- TABS ---------- */
+  .details { margin-top: 72px; }
+
+  .tabs {
+    display: flex;
+    gap: 26px;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex: none;
+    margin-bottom: -1px;                   /* active underline sits on top of the grey line */
+    padding: 0 0 15px;
+    border-bottom: 2px solid transparent;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--pink); }
+
+  .panel { padding-top: 25px; }
+  .panel[hidden] { display: none; }
+
+  .panel__text {
+    max-width: 820px;
+    font-size: 16px;
+    line-height: 27px;
+    color: var(--muted);
+    text-wrap: pretty;
+  }
+
+  /* feature strip */
+  .features {
+    margin-top: 26px;
+    padding: 26px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .feature { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .feature__icon {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--pink);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .feature__title {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .feature__sub { font-size: 13px; line-height: 18px; color: var(--muted); }
+
+  /* other tab panels */
+  .steps { max-width: 820px; list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--muted);
+  }
+  .steps li::before {
+    content: "0" counter(step);
+    flex: none;
+    width: 32px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 26px;
+    line-height: 26px;
+    color: var(--pink);
+  }
+  .steps strong { display: block; font-size: 11px; line-height: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+
+  .reviews { max-width: 820px; list-style: none; }
+  .review { padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .review__head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .review__head strong { color: var(--ink); font-weight: 600; }
+  .review__head .stars { margin-right: 0; }
+  .review__head .stars svg { width: 12px; height: 12px; }
+  .review p { margin-top: 8px; font-size: 15px; line-height: 24px; color: var(--muted); }
+  .review-summary { margin-bottom: 4px; font-size: 14px; color: var(--muted); }
+
+  /* ---------- YOU MAY ALSO LOVE ---------- */
+  .related { margin-top: 64px; }
+  .related__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.005em;
+  }
+
+  .related__grid {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+    list-style: none;
+  }
+
+  .card { display: block; text-align: center; text-decoration: none; }
+  .card__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #f3c6cd;
+  }
+  .card__media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .card:hover .card__media img { transform: scale(1.03); }
+
+  .badge {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    display: inline-flex;
+    align-items: center;
+    height: 21px;
+    padding: 0 8px;
+    background: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .card__name {
+    margin-top: 10px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    transition: color .2s ease;
+  }
+  .card:hover .card__name, .card:focus-visible .card__name { color: var(--pink); }
+  .card__price { margin-top: 2px; font-size: 14px; line-height: 20px; color: var(--muted); }
+  .card__rating {
+    margin-top: 6px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .card__rating .stars svg { width: 12px; height: 12px; }
+
+  /* ---------- TOAST ---------- */
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    z-index: 50;
+    max-width: calc(100% - 32px);
+    padding: 14px 20px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    transform: translate(-50%, 16px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+  /* ---------- SIZE GUIDE DIALOG ---------- */
+  dialog {
+    width: min(480px, 100% - 32px);
+    margin: auto;
+    padding: 28px;
+    border: 0;
+    background: #fff;
+    color: var(--ink);
+    box-shadow: 0 20px 60px rgba(42, 38, 38, .25);
+  }
+  dialog::backdrop { background: rgba(42, 34, 36, .45); }
+  .dlg__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+  .dlg__title { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 28px; line-height: 34px; }
+  .dlg__close { width: 36px; height: 36px; margin: -6px -8px 0 0; display: flex; align-items: center; justify-content: center; }
+  .dlg__close svg { width: 16px; height: 16px; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; fill: none; }
+  .dlg__text { margin-top: 10px; font-size: 14px; line-height: 22px; color: var(--muted); }
+  .dlg__table { width: 100%; margin-top: 18px; border-collapse: collapse; font-size: 14px; }
+  .dlg__table th, .dlg__table td { padding: 10px 0; text-align: left; border-bottom: 1px solid var(--line); }
+  .dlg__table th { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+
+  /* ---------- TABLET: stack, gallery on top ---------- */
+  @media (max-width: 899px) {
+    .product { grid-template-columns: 1fr; row-gap: 36px; }
+    .gallery { max-width: 640px; }
+    .info { max-width: 640px; }
+    .title { font-size: clamp(36px, 6vw, 48px); }
+  }
+
+  /* ---------- PHONE: thumbnails go under the photo ---------- */
+  @media (max-width: 639px) {
+    .page { padding-bottom: 56px; }
+    .product { margin-top: 18px; row-gap: 28px; }
+
+    .gallery { grid-template-columns: 1fr; row-gap: 12px; }
+    .main-img { order: 1; }
+    .thumbs {
+      order: 2;
+      flex-direction: row;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .thumbs::-webkit-scrollbar { display: none; }
+    .thumb { flex: none; width: calc((100% - 30px) / 4); height: auto; aspect-ratio: 1 / 1; }
+
+    .crumbs ol { letter-spacing: 0.16em; }
+    .price { font-size: 22px; }
+    .opt span { height: 42px; }
+    .stepper { height: 44px; }
+    .btn--add { height: 48px; }
+    .btn--buy { height: 50px; }
+    .included__list { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- TABS + RELATED: TABLET ---------- */
+  @media (max-width: 899px) {
+    .details { margin-top: 56px; }
+    .related { margin-top: 52px; }
+    .related__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 18px; }
+    .related__title { font-size: 30px; }
+  }
+
+  /* ---------- TABS + RELATED: PHONE ---------- */
+  @media (max-width: 699px) {
+    .features { grid-template-columns: 1fr; padding: 8px 0; }
+    .feature { justify-content: flex-start; padding: 14px 0; }
+    .feature + .feature { border-top: 1px solid var(--line); }
+  }
+  @media (max-width: 639px) {
+    .details { margin-top: 44px; }
+    .tabs { gap: 22px; }
+    .panel { padding-top: 20px; }
+    .panel__text { font-size: 15px; line-height: 25px; }
+    .related { margin-top: 44px; }
+    .related__title { font-size: 28px; line-height: 34px; }
+    .related__grid { margin-top: 24px; gap: 28px 12px; }
+    .badge { top: 8px; left: 8px; height: 19px; padding: 0 6px; font-size: 8px; }
+    .card__name { font-size: 18px; line-height: 22px; margin-top: 8px; }
+    .card__price { font-size: 13px; }
+    .steps li { gap: 14px; font-size: 15px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+</svg>
+
+<!-- Put your site header here -->
+
+<main class="page">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="#" aria-current="page">Rosé Nude</a></li>
+    </ol>
+  </nav>
+
+  <div class="product">
+
+    <!-- ===== GALLERY ===== -->
+    <div class="gallery">
+      <div class="thumbs" id="thumbs">
+        <button class="thumb" type="button" data-src="pdp-1.jpg" aria-label="Show photo 1" aria-pressed="true"><img src="pdp-1.jpg" alt="" onerror="this.style.display='none'"></button>
+        <button class="thumb" type="button" data-src="pdp-2.jpg" aria-label="Show photo 2" aria-pressed="false"><img src="pdp-2.jpg" alt="" onerror="this.style.display='none'"></button>
+        <button class="thumb" type="button" data-src="pdp-3.jpg" aria-label="Show photo 3" aria-pressed="false"><img src="pdp-3.jpg" alt="" onerror="this.style.display='none'"></button>
+        <button class="thumb" type="button" data-src="pdp-4.jpg" aria-label="Show photo 4" aria-pressed="false"><img src="pdp-4.jpg" alt="" onerror="this.style.display='none'"></button>
+      </div>
+      <div class="main-img">
+        <img id="mainImg" src="product-1.png" alt="Rosé Nude press-on nails arranged on pink satin" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <!-- ===== INFO ===== -->
+    <div class="info">
+      <h1 class="title">Rosé Nude</h1>
+
+      <div class="rating">
+        <span class="stars" aria-label="4.9 out of 5 stars">
+          <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg>
+        </span>
+        <a href="#reviews">4.9 · 312 reviews</a>
+      </div>
+
+      <p class="price">₹799</p>
+
+      <!-- Shape -->
+      <div class="group" role="radiogroup" aria-labelledby="lbl-shape">
+        <div class="group__head">
+          <span class="label" id="lbl-shape">Shape: <span data-value-for="shape">Almond</span></span>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="shape" value="Almond" checked><span>Almond</span></label>
+          <label class="opt"><input type="radio" name="shape" value="Coffin"><span>Coffin</span></label>
+          <label class="opt"><input type="radio" name="shape" value="Square"><span>Square</span></label>
+          <label class="opt"><input type="radio" name="shape" value="Oval"><span>Oval</span></label>
+        </div>
+      </div>
+
+      <!-- Length -->
+      <div class="group" role="radiogroup" aria-labelledby="lbl-length">
+        <div class="group__head">
+          <span class="label" id="lbl-length">Length: <span data-value-for="length">Medium</span></span>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="length" value="Short"><span>Short</span></label>
+          <label class="opt"><input type="radio" name="length" value="Medium" checked><span>Medium</span></label>
+          <label class="opt"><input type="radio" name="length" value="Long"><span>Long</span></label>
+        </div>
+      </div>
+
+      <!-- Size -->
+      <div class="group" role="radiogroup" aria-labelledby="lbl-size">
+        <div class="group__head">
+          <span class="label" id="lbl-size">Size: <span data-value-for="size">M</span></span>
+          <button class="size-link" type="button" id="sizeGuideBtn">Size guide</button>
+        </div>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="size" value="XS"><span>XS</span></label>
+          <label class="opt"><input type="radio" name="size" value="S"><span>S</span></label>
+          <label class="opt"><input type="radio" name="size" value="M" checked><span>M</span></label>
+          <label class="opt"><input type="radio" name="size" value="L"><span>L</span></label>
+        </div>
+      </div>
+
+      <!-- What's included -->
+      <section class="included" aria-labelledby="inc-title">
+        <h2 class="label" id="inc-title">What’s included</h2>
+        <ul class="included__list">
+          <li><svg><use href="#check"/></svg>24 nails in 12 sizes</li>
+          <li><svg><use href="#check"/></svg>Nail glue</li>
+          <li><svg><use href="#check"/></svg>Adhesive tabs</li>
+          <li><svg><use href="#check"/></svg>Mini file &amp; cuticle stick</li>
+        </ul>
+      </section>
+
+      <!-- Quantity -->
+      <div class="qty">
+        <label class="label" for="qty">Qty</label>
+        <div class="stepper">
+          <button type="button" id="minus" aria-label="Decrease quantity"><svg viewBox="0 0 12 12"><path d="M2 6h8"/></svg></button>
+          <input id="qty" type="text" inputmode="numeric" value="1" aria-live="polite">
+          <button type="button" id="plus" aria-label="Increase quantity"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2v8"/></svg></button>
+        </div>
+      </div>
+
+      <button class="btn btn--add" id="addBtn" type="button">Add to cart</button>
+      <button class="btn btn--buy" id="buyBtn" type="button">Buy now</button>
+    </div>
+  </div>
+  <!-- ============ TABS ============ -->
+  <section class="details" id="details" aria-label="Product details">
+    <div class="tabs" role="tablist" aria-label="Product information">
+      <button class="tab" role="tab" id="tab-description" aria-controls="panel-description" aria-selected="true" type="button">Description</button>
+      <button class="tab" role="tab" id="tab-apply" aria-controls="panel-apply" aria-selected="false" tabindex="-1" type="button">How to apply</button>
+      <button class="tab" role="tab" id="tab-shipping" aria-controls="panel-shipping" aria-selected="false" tabindex="-1" type="button">Shipping</button>
+      <button class="tab" role="tab" id="tab-reviews" aria-controls="panel-reviews" aria-selected="false" tabindex="-1" type="button">Reviews</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-description" aria-labelledby="tab-description">
+      <p class="panel__text">Hand-finished in soft gel with a glossy top coat. Each set is designed to look natural, feel lightweight and last up to two weeks per wear.</p>
+
+      <ul class="features">
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>
+          <div><p class="feature__title">Long-lasting wear</p><p class="feature__sub">Up to 2 weeks</p></div>
+        </li>
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+          <div><p class="feature__title">Water resistant</p><p class="feature__sub">Shower &amp; swim safe</p></div>
+        </li>
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>
+          <div><p class="feature__title">Reusable</p><p class="feature__sub">Wear again &amp; again</p></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-apply" aria-labelledby="tab-apply" hidden>
+      <ol class="steps">
+        <li><div><strong>Prep</strong>Clean your nails and push back cuticles.</div></li>
+        <li><div><strong>Select</strong>Choose the right size for each nail.</div></li>
+        <li><div><strong>Apply</strong>Apply adhesive or glue and press for 10 seconds.</div></li>
+        <li><div><strong>Slay</strong>Enjoy your salon-perfect nails.</div></li>
+      </ol>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-shipping" aria-labelledby="tab-shipping" hidden>
+      <!-- Replace with your real shipping and returns details -->
+      <p class="panel__text">Free shipping on orders above ₹999. Orders are packed and dispatched within 1 to 2 business days, and delivery usually takes 3 to 7 business days depending on your location. You will receive a tracking link by email as soon as your order ships.</p>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-reviews" aria-labelledby="tab-reviews" hidden>
+      <!-- Replace with your real customer reviews -->
+      <p class="review-summary">4.9 out of 5 · 312 reviews</p>
+      <ul class="reviews">
+        <li class="review">
+          <div class="review__head"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><strong>Ananya S.</strong><span>Verified buyer</span></div>
+          <p>They went on in minutes and still looked perfect on day ten. I have not been back to the salon since.</p>
+        </li>
+        <li class="review">
+          <div class="review__head"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><strong>Meera K.</strong><span>Verified buyer</span></div>
+          <p>The colour is exactly like the photos, and the fit was great. I got compliments all evening.</p>
+        </li>
+        <li class="review">
+          <div class="review__head"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><strong>Ritika P.</strong><span>Verified buyer</span></div>
+          <p>I have small nails and was worried about sizing, but the box had the right fit. Already reused them twice.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ YOU MAY ALSO LOVE ============ -->
+  <section class="related" aria-labelledby="related-title">
+    <h2 class="related__title" id="related-title">You may also love</h2>
+    <ul class="related__grid">
+        <li>
+          <a class="card" href="product.html?item=cherry-wine">
+            <div class="card__media">
+              <img src="product-1.png" alt="Cherry Wine press-on nails" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <h3 class="card__name">Cherry Wine</h3>
+            <p class="card__price">₹849</p>
+            <div class="card__rating"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>(204)</div>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="product.html?item=french-pearl">
+            <div class="card__media">
+              <img src="product-2.png" alt="French Pearl press-on nails" loading="lazy" onerror="this.style.display='none'">
+          <span class="badge">New</span>
+            </div>
+            <h3 class="card__name">French Pearl</h3>
+            <p class="card__price">₹949</p>
+            <div class="card__rating"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>(278)</div>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="product.html?item=blush-bow">
+            <div class="card__media">
+              <img src="product-3.png" alt="Blush Bow press-on nails" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <h3 class="card__name">Blush Bow</h3>
+            <p class="card__price">₹899</p>
+            <div class="card__rating"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>(186)</div>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="product.html?item=mocha-muse">
+            <div class="card__media">
+              <img src="product-1.png" alt="Mocha Muse press-on nails" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <h3 class="card__name">Mocha Muse</h3>
+            <p class="card__price">₹799</p>
+            <div class="card__rating"><span class="stars" aria-label="5 out of 5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span>(142)</div>
+          </a>
+        </li>
+    </ul>
+  </section>
+</main>
+
+<!-- Put your site footer here -->
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="sizeDialog" aria-labelledby="dlgTitle">
+  <div class="dlg__head">
+    <h2 class="dlg__title" id="dlgTitle">Size guide</h2>
+    <button class="dlg__close" type="button" id="dlgClose" aria-label="Close size guide"><svg viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+  </div>
+  <p class="dlg__text">Measure the widest part of each nail and pick the closest size. If you are between two sizes, choose the smaller one.</p>
+  <!-- Replace these widths with your real size chart -->
+  <table class="dlg__table">
+    <thead><tr><th scope="col">Size</th><th scope="col">Thumb nail width</th></tr></thead>
+    <tbody>
+      <tr><td>XS</td><td>13 – 14 mm</td></tr>
+      <tr><td>S</td><td>14 – 15 mm</td></tr>
+      <tr><td>M</td><td>15 – 16 mm</td></tr>
+      <tr><td>L</td><td>16 – 17 mm</td></tr>
+    </tbody>
+  </table>
+</dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- change these for your own store ---- */
+  var PRODUCT   = { id: "rose-nude", name: "Rosé Nude", price: 799 };
+  var CHECKOUT  = "#checkout";          // where "Buy now" goes
+  var MAX_QTY   = 10;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- gallery ---------- */
+  var main = $("mainImg");
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll(".thumb"));
+
+  thumbs.forEach(function (t, i) {
+    t.addEventListener("click", function () {
+      thumbs.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+      t.setAttribute("aria-pressed", "true");
+      main.style.display = "";
+      main.src = t.dataset.src;
+      main.alt = "Rosé Nude, photo " + (i + 1);
+    });
+  });
+
+  /* ---------- options (shape / length / size) ---------- */
+  function selected(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+  document.addEventListener("change", function (e) {
+    if (e.target.type !== "radio") return;
+    var out = document.querySelector('[data-value-for="' + e.target.name + '"]');
+    if (out) out.textContent = e.target.value;
+  });
+
+  /* ---------- quantity ---------- */
+  var qty = $("qty"), minus = $("minus"), plus = $("plus");
+  function setQty(n) {
+    n = parseInt(n, 10);
+    if (isNaN(n) || n < 1) n = 1;
+    if (n > MAX_QTY) n = MAX_QTY;
+    qty.value = n;
+    minus.disabled = n <= 1;
+    plus.disabled = n >= MAX_QTY;
+  }
+  minus.addEventListener("click", function () { setQty(parseInt(qty.value, 10) - 1); });
+  plus.addEventListener("click",  function () { setQty(parseInt(qty.value, 10) + 1); });
+  qty.addEventListener("change", function () { setQty(qty.value); });
+  qty.addEventListener("input",  function () { qty.value = qty.value.replace(/\D/g, ""); });
+  setQty(1);
+
+  /* ---------- toast ---------- */
+  var toast = $("toast"), toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("is-visible"); }, 2800);
+  }
+
+  function selection() {
+    return {
+      id: PRODUCT.id,
+      name: PRODUCT.name,
+      price: PRODUCT.price,
+      shape: selected("shape"),
+      length: selected("length"),
+      size: selected("size"),
+      qty: parseInt(qty.value, 10) || 1
+    };
+  }
+
+  /* ---------- add to cart ---------- */
+  var addBtn = $("addBtn"), addTimer;
+  addBtn.addEventListener("click", function () {
+    var item = selection();
+    // Other scripts (your cart) can listen for this event:  document.addEventListener("cart:add", ...)
+    document.dispatchEvent(new CustomEvent("cart:add", { detail: item }));
+
+    showToast(item.qty + " × " + item.name + " (" + item.shape + ", " + item.length + ", " + item.size + ") added to your cart");
+    addBtn.textContent = "Added ✓";
+    addBtn.classList.add("is-added");
+    clearTimeout(addTimer);
+    addTimer = setTimeout(function () {
+      addBtn.textContent = "Add to cart";
+      addBtn.classList.remove("is-added");
+    }, 1800);
+  });
+
+  /* ---------- buy now ---------- */
+  $("buyBtn").addEventListener("click", function () {
+    var item = selection();
+    document.dispatchEvent(new CustomEvent("cart:buy", { detail: item }));
+    var q = "product=" + encodeURIComponent(item.id) +
+            "&shape=" + encodeURIComponent(item.shape) +
+            "&length=" + encodeURIComponent(item.length) +
+            "&size=" + encodeURIComponent(item.size) +
+            "&qty=" + item.qty;
+    if (CHECKOUT.charAt(0) === "#") {
+      showToast("Taking you to checkout…");
+      location.hash = CHECKOUT.slice(1);
+    } else {
+      location.href = CHECKOUT + (CHECKOUT.indexOf("?") > -1 ? "&" : "?") + q;
+    }
+  });
+
+  /* ---------- size guide ---------- */
+  var dlg = $("sizeDialog");
+  $("sizeGuideBtn").addEventListener("click", function () {
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  });
+  $("dlgClose").addEventListener("click", function () { dlg.close ? dlg.close() : dlg.removeAttribute("open"); });
+  dlg.addEventListener("click", function (e) {            // click on the dark backdrop closes it
+    if (e.target === dlg && dlg.close) dlg.close();
+  });
+
+  /* ---------- tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  function selectTab(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function () { selectTab(t, false); });
+    t.addEventListener("keydown", function (e) {
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft")  n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === "Home") n = tabs[0];
+      if (e.key === "End")  n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); selectTab(n, true); }
+    });
+  });
+
+  /* "4.9 · 312 reviews" under the title opens the Reviews tab */
+  function openFromHash() {
+    var map = { "#reviews": "tab-reviews", "#shipping": "tab-shipping", "#how-to-apply": "tab-apply", "#description": "tab-description" };
+    var id = map[location.hash];
+    if (!id) return false;
+    selectTab(document.getElementById(id), false);
+    document.getElementById("details").scrollIntoView({ behavior: "smooth", block: "start" });
+    return true;
+  }
+  var ratingLink = document.querySelector(".rating a");
+  if (ratingLink) ratingLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    selectTab(document.getElementById("tab-reviews"), false);
+    document.getElementById("details").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- ====================================================Footer====================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Footer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2a2224;
+    --pink: #e45c87;
+    --muted: #7a6d70;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #fffafa;
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1275px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer { background: #fbe6ea; color: var(--ink); }
+  .footer a { text-decoration: none; transition: color .2s ease; }
+  .footer a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  /* newsletter row */
+  .footer__news {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+    padding: 64px 0;
+    border-bottom: 1px solid #efc4cd;
+  }
+  .footer__news-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--ink);
+  }
+  .footer__news-text {
+    margin-top: 10px;
+    max-width: 448px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--muted);
+  }
+  .signup { display: flex; }
+  .signup input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 18px;
+    border: 1px solid #e6b6c1;
+    border-right: 0;
+    border-radius: 0;
+    background: #fff;
+    font: 400 14px "Inter", system-ui, sans-serif;
+    color: var(--ink);
+  }
+  .signup input::placeholder { color: #a89a9d; }
+  .signup input:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+  .signup button {
+    width: 168px;
+    height: 48px;
+    border: 0;
+    border-radius: 0;
+    background: var(--pink);
+    color: #fff;
+    font: 600 11px "Inter", system-ui, sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .2s ease;
+  }
+  .signup button:hover { background: #d94a78; }
+  .signup button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .signup__note { margin-top: 10px; font-size: 12px; line-height: 18px; color: var(--muted); }
+
+  /* link columns */
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1fr 1.3fr;
+    column-gap: 32px;
+    padding: 64px 0;
+  }
+  .footer__brand-name {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .footer__brand-name span { font-style: italic; color: var(--pink); }
+  .footer__about {
+    margin-top: 14px;
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--muted);
+  }
+  .social { margin-top: 24px; display: flex; gap: 10px; list-style: none; }
+  .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--pink);
+    border-radius: 50%;
+    color: var(--pink);
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .social a:hover { background: var(--pink); color: #fff; }
+  .social svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+  .footer__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .footer__list { margin-top: 18px; list-style: none; }
+  .footer__list li + li { margin-top: 10px; }
+  .footer__list a,
+  .footer__contact a { font-size: 14px; line-height: 22px; color: var(--muted); }
+  .footer__list a:hover,
+  .footer__contact a:hover { color: var(--pink); }
+  .footer__contact { margin-top: 18px; font-style: normal; font-size: 14px; line-height: 22px; color: var(--muted); }
+  .footer__contact p + p,
+  .footer__contact a { display: block; }
+  .footer__contact p + p { margin-top: 10px; }
+
+  /* payments */
+  .footer__pay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-top: 1px solid #efc4cd;
+  }
+  .pay { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .pay__label { margin-right: 8px; font-size: 12px; line-height: 18px; color: var(--muted); }
+  .pay li:not(.pay__label) {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 12px;
+    background: #fff;
+    border: 1px solid #efc4cd;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+  .footer__secure { font-size: 12px; line-height: 18px; color: var(--muted); }
+
+  /* bottom bar */
+  .footer__bar { background: var(--ink); color: #ead6da; }
+  .footer__bar .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .footer__legal { display: flex; gap: 24px; list-style: none; }
+  .footer__bar a { color: #ead6da; }
+  .footer__bar a:hover { color: #f48fae; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1100px) {
+    .footer__main { grid-template-columns: repeat(3, 1fr); row-gap: 48px; }
+    .footer__brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 900px) {
+    .footer__news { grid-template-columns: 1fr; row-gap: 24px; padding: 48px 0; }
+    .footer__main { padding: 48px 0; }
+  }
+  @media (max-width: 560px) {
+    .footer__main { grid-template-columns: 1fr 1fr; }
+    .signup { flex-direction: column; }
+    .signup input { border-right: 1px solid #e6b6c1; border-bottom: 0; }
+    .signup button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+
+    <div class="footer__news">
+      <div>
+        <h2 class="footer__news-title">Join the Press-On Club</h2>
+        <p class="footer__news-text">Get 10% off your first set, plus early access to new drops and styling ideas.</p>
+      </div>
+      <div>
+        <form class="signup" action="#" method="post">
+          <label for="footer-email" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
+          <input id="footer-email" type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="signup__note">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <div class="footer__main">
+      <div class="footer__brand">
+        <!-- Replace with your brand name or logo -->
+        <p class="footer__brand-name">Your <span>Brand</span></p>
+        <p class="footer__about">Hand-finished, reusable press-on nails for salon-worthy manicures at home, in under ten minutes.</p>
+        <ul class="social">
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6"/></svg></a></li>
+          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2.5V4.5H14c-2.5 0-4 1.6-4 4V11H7.5v3.5H10V21h3.5v-6.5H16L16.5 11h-3V8.8c0-.5.3-.8.5-.8z"/></svg></a></li>
+          <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z"/></svg></a></li>
+          <li><a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.2-4.2A8 8 0 1 1 8.3 18.9z"/><path d="M9.2 8.8c.3 2.6 2.4 4.7 5 5l1-1.2-1.8-.9-.8.6c-.9-.4-1.6-1.1-2-2l.6-.8-.9-1.8z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <nav aria-label="Shop">
+        <h3 class="footer__title">Shop</h3>
+        <ul class="footer__list">
+          <li><a href="#">All Press-Ons</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">French Tips</a></li>
+          <li><a href="#">Gift Sets</a></li>
+          <li><a href="#">Nail Care Kits</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Help">
+        <h3 class="footer__title">Help</h3>
+        <ul class="footer__list">
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns &amp; Exchanges</a></li>
+          <li><a href="#">Track Your Order</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company">
+        <h3 class="footer__title">Company</h3>
+        <ul class="footer__list">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Wholesale</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3 class="footer__title">Get in Touch</h3>
+        <address class="footer__contact">
+          <p>Mon to Sat, 10am to 6pm</p>
+          <p><a href="mailto:hello@yourbrand.com">hello@yourbrand.com</a></p>
+          <p><a href="tel:+910000000000">+91 00000 00000</a></p>
+          <p>Your street address,<br>City, State, India</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__pay">
+      <ul class="pay">
+        <li class="pay__label">We accept</li>
+        <li>UPI</li>
+        <li>VISA</li>
+        <li>MASTERCARD</li>
+        <li>RUPAY</li>
+        <li>COD</li>
+      </ul>
+      <p class="footer__secure">Secure checkout. Easy returns.</p>
+    </div>
+
+  </div>
+
+  <div class="footer__bar">
+    <div class="wrap">
+      <p>© 2026 Your Brand. All rights reserved.</p>
+      <ul class="footer__legal">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
